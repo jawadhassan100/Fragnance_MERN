@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
-import AboutUs from "./components/AboutUs/AboutUs"
 import FAQ from "./components/FAQ/FAQ"
 import Footer from "./components/Footer/Footer"
 import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs"
 import { FaArrowUp, FaWhatsapp } from "react-icons/fa"
+import ProductSlider from "./components/ProductSlider/ProductSlider"
+import ProductCategory from "./components/ProductCategory/ProductCategory"
 
 const HomePage = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
@@ -39,7 +40,8 @@ const HomePage = () => {
 
   return (
     <>
-    <AboutUs/>
+    <ProductCategory/>
+    <ProductSlider/>
     <WhyChooseUs/>
     <FAQ/>
     <Footer/>
