@@ -40,41 +40,41 @@ const FAQ = () => {
   };
 
   return (
-    <div className="bg-emerald-50 py-16">
+    <div className="bg-emerald-50 py-10">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-emerald-800 mb-6">Frequently Asked Questions</h2>
-          <div className="w-24 h-1 bg-emerald-600 mx-auto"></div>
+        <div className="text-center mb-6">
+          <h2 className="text-2xl font-bold text-emerald-800 mb-2">FAQ</h2>
+          <div className="w-16 h-0.5 bg-emerald-600 mx-auto"></div>
         </div>
 
         {/* FAQ Items */}
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="mb-4 bg-white  rounded-lg shadow-md overflow-hidden  border-emerald-600"
+              className="mb-2 bg-white rounded border-l-2 border-emerald-600 overflow-hidden text-sm"
             >
               <button
-                className="w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer transition-colors duration-200"
+                className="w-full px-4 py-3 text-left flex justify-between items-center"
                 onClick={() => toggleFAQ(index)}
               >
-                <span className="text-lg font-semibold text-emerald-800">
+                <span className="font-medium text-emerald-800">
                   {faq.question}
                 </span>
-                <ChevronDown 
-                  className={`w-5 h-5 text-emerald-600 transform transition-transform duration-200 ${
+                <ChevronDown
+                  className={`w-4 h-4 text-emerald-600 transform ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
               
               <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openIndex === index ? 'max-h-40' : 'max-h-0'
+                className={`overflow-hidden transition-all duration-200 ${
+                  openIndex === index ? 'max-h-32' : 'max-h-0'
                 }`}
               >
-                <div className="px-6 py-4 text-emerald-700  border-t border-emerald-200">
+                <div className="px-4 py-2 text-emerald-700 border-t border-emerald-100 text-xs">
                   {faq.answer}
                 </div>
               </div>
@@ -83,10 +83,10 @@ const FAQ = () => {
         </div>
 
         {/* Help text */}
-        <div className="text-center mt-8">
-          <p className="text-emerald-600">
-            Still have questions? Contact our support team at{' '}
-            <a href="mailto:support@lascentio.com" className="font-medium hover:text-emerald-800">
+        <div className="text-center mt-4">
+          <p className="text-emerald-600 text-xs">
+            Questions? Email{' '}
+            <a href="mailto:support@lascentio.com" className="font-medium">
               support@lascentio.com
             </a>
           </p>

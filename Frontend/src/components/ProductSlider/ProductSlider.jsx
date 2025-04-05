@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { FaShoppingCart } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -88,7 +87,7 @@ const ProductSlider = () => {
               <h3 className="text-xs font-medium">{product.name}</h3>
               <p className="text-gray-600 text-[10px]">{product.description}</p>
               <p className="text-green-600 text-xs">{product.price}</p>
-              <button className="text-gray-600 py-1 text-xs text-left cursor-pointer w-full translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500">
+              <button className="text-gray-600 py-1 text-xs  cursor-pointer w-full translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500">
                 Add to Cart
               </button>
             </div>

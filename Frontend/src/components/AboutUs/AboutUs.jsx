@@ -1,8 +1,10 @@
+import Footer from "../Footer/Footer";
 
 
 const AboutUs = () => {
   return (
-    <div className=" bg-emerald-50 min-h-screen pt-16">
+    <>  
+    <div className=" bg-emerald-50 min-h-screen pt-16 pb-8">
       {/* Hero Section */}
       <div className=" text-emerald-600 py-16">
         <div className="container mx-auto px-4">
@@ -15,13 +17,13 @@ const AboutUs = () => {
         <div className="max-w-4xl mx-auto mb-16">
           <div className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-emerald-600">
             <div className="prose prose-lg">
-              <p className="text-emerald-800 text-lg leading-relaxed mb-6">
+              <p className="text-emerald-800 text-md leading-relaxed mb-6">
                 LaScentio Fragrances is a passion-driven brand founded by two childhood friends with a shared dream of making luxury accessible to everyone. Rooted in a deep appreciation for fine fragrances, the brand was born out of a desire to create high-quality perfume impressions inspired by the world&apos;s most iconic scents.
               </p>
-              <p className="text-emerald-800 text-lg leading-relaxed mb-6">
+              <p className="text-emerald-800 text-md leading-relaxed mb-6">
                 With a commitment to excellence and a belief that everyone deserves to experience the elegance of premium fragrances, La&apos;Scentio Fragrances combines artistry and affordability to craft scents that evoke timeless memories and moments of joy.
               </p>
-              <p className="text-emerald-800 text-lg leading-relaxed">
+              <p className="text-emerald-800 text-md leading-relaxed">
                 Our journey reflects the strength of friendship, a love for innovation, and a dedication to bringing sophistication and charm into the lives of our customers. At LaScentio Fragrances, we&apos;re not just creating scents—we&apos;re creating lasting impressions.
               </p>
             </div>
@@ -83,6 +85,8 @@ const AboutUs = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 
+
 const WhyChooseUs = () => {
   const reasons = [
     {
@@ -7,7 +8,7 @@ const WhyChooseUs = () => {
     },
     {
       title: "Inspired by Iconic Brands",
-      description: "Our perfume impressions are meticulously designed to mirror the world's most celebrated fragrances, offering you the similar sophistication at a fraction of the cost."
+      description: "Our perfume impressions mirror celebrated fragrances at a fraction of the cost."
     },
     {
       title: "Timeless Elegance",
@@ -15,57 +16,57 @@ const WhyChooseUs = () => {
     },
     {
       title: "Ethically Conscious",
-      description: "We prioritize sustainable sourcing and eco-friendly practices, ensuring our products are both luxurious and responsible."
+      description: "We prioritize sustainable sourcing and eco-friendly practices."
     },
     {
       title: "Made for You",
-      description: "With a diverse range of fragrances, we have something to suit every taste, mood, and occasion."
+      description: "With a diverse range of fragrances for every taste, mood, and occasion."
     },
     {
       title: "Trusted Quality",
-      description: "We rigorously test our products to ensure you receive only the finest fragrance impressions."
+      description: "We rigorously test our products to ensure the finest fragrance impressions."
     },
     {
-      title: "A Story of Friendship and Passion",
-      description: "Built on a foundation of trust and love for fine fragrances, our brand reflects the heartfelt dedication of its founders."
+      title: "A Story of Friendship",
+      description: "Built on trust and passion for fine fragrances."
     },
     {
       title: "Unmatched Value",
-      description: "We offer you premium quality scents without compromising on affordability or excellence."
+      description: "Premium quality scents without compromising on affordability."
     },
     {
       title: "Experience Luxury Daily",
-      description: "With LaScentio, you don't need a special occasion to feel extraordinary. Our fragrances bring luxury into your everyday life."
+      description: "Feel extraordinary every day with our luxury fragrances."
     }
   ];
 
   return (
-    <div className="bg-emerald-50 py-16">
+    <div className=" py-8">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-emerald-800 mb-6">Why Choose Us</h2>
-          <p className="text-emerald-600 text-lg max-w-2xl mx-auto">
-            At LaScentio Fragrances, we believe in offering more than just scents, we provide an experience of luxury and elegance at an affordable price. Here&apos;s why we stand out:
+        <div className="text-center mb-8">
+          <h2 className="text-2xl font-bold text-emerald-800 mb-3">Why Choose Us</h2>
+          <p className="text-emerald-600 text-sm max-w-xl mx-auto">
+            At LaScentio Fragrances, we offer luxury and elegance at an affordable price.
           </p>
         </div>
 
         {/* Grid of reasons */}
-        <div className="grid grid-cols-1 md:grid-cols-2  gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {reasons.map((reason, index) => (
             <div 
               key={index} 
-              className="bg-white p-6  rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-emerald-600"
+              className="bg-white p-4 rounded shadow border-l-2 border-emerald-600"
             >
-              <div className="flex items-start mb-4">
-                <span className="flex-shrink-0 w-8 h-8 bg-emerald-600 text-[#FDFBD4] rounded-full flex items-center justify-center font-bold">
+              <div className="flex items-start mb-2">
+                <span className="flex-shrink-0 w-6 h-6 bg-emerald-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
                   {index + 1}
                 </span>
-                <h3 className="text-emerald-800 font-bold text-xl ml-4">
+                <h3 className="text-emerald-800 font-semibold text-sm ml-2">
                   {reason.title}
                 </h3>
               </div>
-              <p className="text-emerald-700 ml-12">
+              <p className="text-emerald-700 text-xs ml-8">
                 {reason.description}
               </p>
             </div>
