@@ -45,8 +45,8 @@ const WhyChooseUs = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-emerald-800 mb-3">Why Choose Us</h2>
-          <p className="text-emerald-600 text-sm max-w-xl mx-auto">
+          <h2 className="text-2xl font-bold text-gray-600 mb-3">Why Choose Us</h2>
+          <p className="text-gray-600 text-sm max-w-xl mx-auto">
             At LaScentio Fragrances, we offer luxury and elegance at an affordable price.
           </p>
         </div>
@@ -56,17 +56,15 @@ const WhyChooseUs = () => {
           {reasons.map((reason, index) => (
             <div 
               key={index} 
-              className="bg-white p-4 rounded shadow border-l-2 border-emerald-600"
+              className="bg-white p-4 rounded shadow"
             >
               <div className="flex items-start mb-2">
-                <span className="flex-shrink-0 w-6 h-6 bg-emerald-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
-                  {index + 1}
-                </span>
-                <h3 className="text-emerald-800 font-semibold text-sm ml-2">
+                
+                <h3 className="text-gray-800 font-semibold text-sm ">
                   {reason.title}
                 </h3>
               </div>
-              <p className="text-emerald-700 text-xs ml-8">
+              <p className="text-gray-700 text-xs ">
                 {reason.description}
               </p>
             </div>

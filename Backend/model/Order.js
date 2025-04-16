@@ -44,8 +44,18 @@ const orderSchema = new mongoose.Schema({
   },
   paymentMethod: {
     type: String,
-    enum: ['cod'],
+    enum: ['cod', 'ziina'],
     required: true,
+  },
+  isPaid: { type: Boolean, default: false },
+  paymentStatus: {
+    type: String,
+    enum: ['Pending', 'Paid', 'Failed'],
+    default: 'Pending',
+  },
+  transactionId: {
+    type: String, // From Ziina
+    default: null,
   },
   totalPrice: {
     type: Number,
@@ -55,6 +65,11 @@ const orderSchema = new mongoose.Schema({
     type: String,
     enum: ['Processing', 'Shipped', 'Delivered', 'Cancelled', 'Returned', 'Pending'],
     default: 'Processing',
+  },
+  discountApplied: {
+    code: String,
+    percentage: Number,
+    amountSaved: Number
   },
   createdAt: {
     type: Date,

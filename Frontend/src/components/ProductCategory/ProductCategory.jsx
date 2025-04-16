@@ -8,7 +8,9 @@ const categories = [
 
 const ProductCategory = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 pt-32 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="">
+
+    <div className="max-w-7xl mx-auto px-4 pt-24 grid grid-cols-1 md:grid-cols-3 gap-6">
       {categories.map((category) => (
         <div
           key={category.id}
@@ -36,6 +38,7 @@ const ProductCategory = () => {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 };

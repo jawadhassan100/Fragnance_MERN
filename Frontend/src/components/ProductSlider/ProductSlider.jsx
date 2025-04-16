@@ -73,7 +73,9 @@ const ProductSlider = () => {
   };
 
   return (
-    <div className="max-w-5xl pt-12 mx-auto p-2">
+    <div className="">
+
+    <div className="max-w-5xl  pt-12 mx-auto p-2">
     <Slider ref={sliderRef} {...settings}>
       {products.map((product) => (
         <div key={product.id} className="p-1">
@@ -86,7 +88,7 @@ const ProductSlider = () => {
             <div className="p-2 text-left">
               <h3 className="text-xs font-medium">{product.name}</h3>
               <p className="text-gray-600 text-[10px]">{product.description}</p>
-              <p className="text-green-600 text-xs">{product.price}</p>
+              <p className="text-gray-600 text-xs">{product.price}</p>
               <button className="text-gray-600 py-1 text-xs  cursor-pointer w-full translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500">
                 Add to Cart
               </button>
@@ -96,6 +98,7 @@ const ProductSlider = () => {
       ))}
     </Slider>
   </div>
+    </div>
   
   );
 };

@@ -86,3 +86,27 @@ exports.removeFromCart = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+// Add this function to your cart controller
+exports.updateCartEmail = async (req, res) => {
+  try {
+    const { sessionId, email } = req.body;
+
+    if (!sessionId || !email) {
+      return res.status(400).json({ message: 'Session ID and email are required' });
+    }
+
+    const cart = await Cart.findOne({ sessionId });
+
+    if (!cart) {
+      return res.status(404).json({ message: 'Cart not found' });
+    }
+
+    cart.email = email;
+    await cart.save();
+
+    res.status(200).json({ message: 'Cart updated with email', cart });
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to update cart', error: error.message });
+  }
+};

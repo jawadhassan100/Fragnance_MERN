@@ -4,7 +4,7 @@ const uploadToCloudinary = require('../helper/cloudinaryHelper');
 // Add Product
 exports.addProduct = async (req, res) => {
   try {
-    const { name, brand, description, weight, price, salePrice, size, categories, Longevity, Sillage } = req.body;
+    const { name, brand, description, weight, price, salePrice, size, categories, Longevity, Sillage, stock } = req.body;
 
     if (!req.files || req.files.length > 5) {
       return res.status(400).json({ error: 'Maximum 5 images are allowed.' });
@@ -30,6 +30,7 @@ exports.addProduct = async (req, res) => {
       categories,
       Longevity,
       Sillage,
+      stock,
     });
 
     await product.save();
@@ -116,6 +117,25 @@ exports.deleteProduct = async (req, res) => {
 
     await product.remove();
     res.status(200).json({ message: 'Product deleted successfully.' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
+exports.getProductStockForAdmin = async (req, res) => {
+  try {
+    // you can add authentication check here to make sure it's admin
+    const products = await Product.find({}, 'name stock quantitySold');
+    
+    const withStatus = products.map(p => ({
+      name: p.name,
+      stock: p.stock,
+      quantitySold: p.quantitySold,
+      status: p.stock > 0 ? 'In Stock' : 'Out of Stock'
+    }));
+
+    res.status(200).json(withStatus);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

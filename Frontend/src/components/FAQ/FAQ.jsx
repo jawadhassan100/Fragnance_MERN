@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
+
 const FAQ = () => {
   const faqs = [
     {
@@ -40,12 +41,12 @@ const FAQ = () => {
   };
 
   return (
-    <div className="bg-emerald-50 py-10">
+    <div className=" py-10 ">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-emerald-800 mb-2">FAQ</h2>
-          <div className="w-16 h-0.5 bg-emerald-600 mx-auto"></div>
+          <h2 className="text-2xl font-bold text-gray-600 mb-2">FAQ</h2>
+          <div className="w-16 h-0.5 bg-gray-600 mx-auto"></div>
         </div>
 
         {/* FAQ Items */}
@@ -53,17 +54,19 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="mb-2 bg-white rounded border-l-2 border-emerald-600 overflow-hidden text-sm"
+              className="mb-2 bg-white rounded  overflow-hidden text-sm"
+              
             >
+             
               <button
                 className="w-full px-4 py-3 text-left flex justify-between items-center"
                 onClick={() => toggleFAQ(index)}
               >
-                <span className="font-medium text-emerald-800">
+                <span className="font-medium text-gray-800">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`w-4 h-4 text-emerald-600 transform ${
+                  className={`w-4 h-4 text-gray-600 transform ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
@@ -74,7 +77,7 @@ const FAQ = () => {
                   openIndex === index ? 'max-h-32' : 'max-h-0'
                 }`}
               >
-                <div className="px-4 py-2 text-emerald-700 border-t border-emerald-100 text-xs">
+                <div className="px-4 py-2  text-gray-700 border-t border-gray-500 text-xs">
                   {faq.answer}
                 </div>
               </div>
@@ -84,7 +87,7 @@ const FAQ = () => {
 
         {/* Help text */}
         <div className="text-center mt-4">
-          <p className="text-emerald-600 text-xs">
+          <p className="text-gray-600 text-xs">
             Questions? Email{' '}
             <a href="mailto:support@lascentio.com" className="font-medium">
               support@lascentio.com

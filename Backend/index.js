@@ -6,6 +6,7 @@ const connectDB =  require('./db/db')
 const indexRoute = require('./routes/indexRoutes')
 const errorHandler = require('./middleware/errorMiddleware');
 require('./helper/cronHelper');
+require('./helper/cronNewsLetter');
 
 dotenv.config();
 

@@ -20,7 +20,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="bg-white py-8">
+    <section className=" py-8">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((item, index) => {
@@ -28,9 +28,9 @@ const Features = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center p-6 rounded-lg  "
+                className="flex flex-col border border-gray-200 bg-white rounded shadow items-center text-center p-6   "
               >
-                <div className="text-green-600 bg-green-50 p-3 rounded-full mb-4">
+                <div className=" bg-gray-100 p-3 rounded-full mb-4">
                   <Icon size={24} />
                 </div>
                 <h3 className="font-semibold text-base text-gray-900 mb-2">{item.title}</h3>

@@ -1,6 +1,7 @@
 const CustomPerfumeOrder = require('../model/CustomPerfumeOrder');
 const CustomPerfume = require('../model/CustomPerfume'); 
 const sendEmail = require('../utils/sendMails'); 
+const customOrderConfirmation = require('../utils/templates/customOrderConfirmation');
 
 exports.createCustomPerfumeOrder = async (req, res) => {
   try {
@@ -35,43 +36,10 @@ exports.createCustomPerfumeOrder = async (req, res) => {
     await customPerfumeOrder.save();
 
     const perfumeNames = selectedPerfumes.map((perfume) => perfume.perfumeName).join(' - ');
-
-    let htmlContent = `
-    <h3>Order Confirmation</h3>
-    <p>Thank you for your order, ${fullName}!</p>
-    <p>We're thrilled to have you as a customer, and we can't wait for you to experience the unique fragrances you selected!</p>
-    <p>Your order details are as follows:</p>
-    <ul>
-      <li><strong>Email:</strong> ${email}</li>
-      <li><strong>Shipping Address:</strong> ${shippingInfo.address}, ${shippingInfo.city}</li>
-      <li><strong>Phone:</strong> ${shippingInfo.phoneNo}</li>
-      <li><strong>WhatsApp:</strong> ${shippingInfo.whatsAppNo}</li>
-      <li><strong>Payment Method:</strong> ${paymentMethod}</li>
-      <li><strong>Total Price:</strong> $${totalPrice}</li>
-    </ul>
-    
-    <h4>Perfume Details:</h4>
-    <p>We believe every fragrance has its own story. Here's the story of the perfumes you've selected:</p>
-    <ul>
-      ${selectedPerfumes.map((perfume, index) => `
-        <li>
-          <strong>Perfume Name:</strong> ${perfumeNames}<br>
-          <strong>Brand:</strong> ${perfume.brand}<br>
-          <strong>Size:</strong> ${perfumeDetails[index].size}<br>
-          <strong>Quantity:</strong> ${perfumeDetails[index].quantity}
-        </li>
-      `).join('')}
-    </ul>
-    
-    <p>Every spray of your new perfume will bring a new and amazing impression to the room. Get ready to leave a lasting mark wherever you go!</p>
-    <p>We are preparing your order, and it will be shipped soon. You’ll be one step closer to indulging in a fragrance that tells your story.</p>
-    
-    <p>If you have any questions or need assistance, feel free to reach out to us. We're here to help!</p>
-    <p>Thank you for choosing us – we look forward to serving you again soon!</p>
-  `;
+    const customerHtmlContent = orderConfirmation(fullName, selectedPerfumes, perfumeDetails, totalPrice, shippingInfo, paymentMethod , perfumeNames);
 
   // Send confirmation email to the customer
-  sendEmail(email, 'Order Confirmation', htmlContent);
+  sendEmail(email, 'Order Confirmation', customerHtmlContent);
 
   // Send a response to the client
   res.status(201).json({

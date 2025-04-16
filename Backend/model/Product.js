@@ -54,6 +54,15 @@ const productSchema = new mongoose.Schema({
     enum:[ "light","moderate", "strong", "intense"],
     required: true
   },
+  stock: {
+    type: Number,
+    required: true,
+    default: 0
+  },
+  quantitySold: {
+    type: Number,
+    default: 0
+  },
   createdAt: {
     type: Date,
     default: Date.now

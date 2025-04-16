@@ -6,6 +6,8 @@ import { FaArrowUp, FaWhatsapp } from "react-icons/fa"
 import ProductSlider from "./components/ProductSlider/ProductSlider"
 import ProductCategory from "./components/ProductCategory/ProductCategory"
 import Features from "./components/Features/Features"
+import Hero from "./components/Hero/Hero"
+import Header from "./components/Header/Header"
 
 const HomePage = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
@@ -41,11 +43,13 @@ const HomePage = () => {
 
   return (
     <>
+    {/* <Header/> */}
+    <Hero/>
     <ProductCategory/>
     <ProductSlider/>
     <WhyChooseUs/>
-    <FAQ/>
     <Features/>
+    <FAQ/>
     <Footer/>
     {showScrollButton && (
         <button

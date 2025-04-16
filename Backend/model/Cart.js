@@ -6,6 +6,10 @@ const cartSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+  email: {
+    type: String,
+    default: null
+  },
   items: [{
     product: {
       type: mongoose.Schema.Types.ObjectId,

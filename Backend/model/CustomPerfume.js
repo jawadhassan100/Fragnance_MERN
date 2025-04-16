@@ -16,7 +16,7 @@ const customPerfumeSchema = new mongoose.Schema({
   },
   size: {
     type: String,
-    enum: ['50ml', '100ml'],
+    enum: ['50ml', '100ml' , '200ml'],
     required: true
   },
   createdAt: {

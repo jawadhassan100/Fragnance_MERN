@@ -9,37 +9,37 @@ const Navbar = () => {
   const cartCount = 0; 
 
   return (
-    <nav className="bg-emerald-500 text-[#FDFBD4] shadow-lg py-6 fixed w-full z-50">
+    <nav className="bg-black text-yellow-500  shadow-lg py-6  w-full z-50">
       <div className="container mx-auto px-4 relative flex items-center py-3">
         {/* Left: Menu Items */}
         <div className="hidden lg:flex space-x-4 text-[14px] flex-1">
           <Link
             to="/"
-            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#FDFBD4] after:left-0 after:-bottom-1"
+            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-500  after:left-0 after:-bottom-1"
           >
             Homes
           </Link>
           <Link
             to="/perfumes"
-            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#FDFBD4] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-500  after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
           >
             Perfumes
           </Link>
           <Link
-            to="/impression"
-            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#FDFBD4] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+            to="/create"
+            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-500  after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
           >
-            Impressions
+            Create
           </Link>
           <Link
             to="/about-us"
-            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#FDFBD4] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-500  after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
           >
            About Us
           </Link>
           <Link
             to="/contact-us"
-            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#FDFBD4] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-500  after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
           >
            Contact Us
           </Link>
@@ -48,7 +48,7 @@ const Navbar = () => {
         {/* Mobile: Left hamburger menu */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden cursor-pointer text-[#FDFBD4] text-2xl"
+          className="lg:hidden cursor-pointer  text-2xl"
         >
           <LuMenu />
         </button>
@@ -65,7 +65,7 @@ const Navbar = () => {
           <Link to="/cart">
             <div className="flex justify-center items-center">
               <TiShoppingCart className="text-3xl" />
-              <span className="bg-emerald-400 hover:bg-emerald-300 text-white text-xs font-bold px-2 py-1 rounded-full">
+              <span className="bg-yellow-500 hover:bg-yellow-600 text-white text-xs font-bold px-2 py-1 rounded-full">
                 {cartCount}
               </span>
             </div>
@@ -75,7 +75,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed top-0 left-0 h-full w-full bg-emerald-600 z-50 transition-transform duration-300 ease-in-out ${
+        className={`lg:hidden fixed top-0 left-0 h-full w-full bg-black  text-yellow-500 z-50 transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -89,35 +89,35 @@ const Navbar = () => {
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className="hover:text-emerald-100 uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#FDFBD4] after:left-0 after:-bottom-1"
+            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-500 after:left-0 after:-bottom-1"
           >
             Homes
           </Link>
           <Link
             to="/perfumes"
             onClick={() => setIsOpen(false)}
-            className="hover:text-emerald-100 uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#FDFBD4] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-500 after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
           >
             Perfumes
           </Link>
           <Link
-            to="/impressions"
+            to="/create"
             onClick={() => setIsOpen(false)}
-            className="hover:text-emerald-100 uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#FDFBD4] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-500 after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
           >
-            Impressions
+            Create
           </Link>
           <Link
             to="/about-us"
             onClick={() => setIsOpen(false)}
-            className="hover:text-emerald-100 uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#FDFBD4] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-500 after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
           >
             About Us
           </Link>
           <Link
             to="/contact-us"
             onClick={() => setIsOpen(false)}
-            className="hover:text-emerald-100 uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#FDFBD4] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-500 after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
           >
             Contact Us
           </Link>
