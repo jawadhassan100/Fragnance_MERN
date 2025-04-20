@@ -10,5 +10,6 @@ router.get('/all', productController.getAllProducts);
 router.get('/:id', productController.getProductById);
 router.put('/edit/:id',auth,adminAuth, upload.array('images', 5), productController.editProduct);
 router.delete('/delete/:id',auth,adminAuth, productController.deleteProduct);
+router.get('/admin/stock',auth,adminAuth, productController.getProductStockForAdmin);
 
 module.exports = router;

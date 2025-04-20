@@ -8,6 +8,11 @@ import ProductCategory from "./components/ProductCategory/ProductCategory"
 import Features from "./components/Features/Features"
 import Hero from "./components/Hero/Hero"
 import Header from "./components/Header/Header"
+import ShopNow from "./components/ShopNow/ShopNow"
+import OurBestSeller from "./components/OurBestSeller/OurBestSeller"
+import NewArrivals from "./components/NewArrivals/NewArrivals"
+import Newsletter from "./components/NewsLetter/NewsLetter"
+import Reviews from "./components/Reviews/Reviews"
 
 const HomePage = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
@@ -42,14 +47,19 @@ const HomePage = () => {
       };
 
   return (
-    <>
+    <div className="overflow-hidden">
     {/* <Header/> */}
     <Hero/>
     <ProductCategory/>
+    <ShopNow/>
+    <OurBestSeller/>
+    <NewArrivals/>
     <ProductSlider/>
     <WhyChooseUs/>
     <Features/>
+    <Reviews/>
     <FAQ/>
+    <Newsletter/>
     <Footer/>
     {showScrollButton && (
         <button
@@ -67,7 +77,7 @@ const HomePage = () => {
           <FaArrowUp className='text-xl'/>
         </button>
       )}
-    </>
+    </div>
   )
 }
 

@@ -1,14 +1,15 @@
 import image from '../../assets/bgHero.jpg';
+import BannerDesktop from '../../assets/BannerDesktop.jpg';
 
 const Hero = () => {
   return (
     <div className=''>
 
     <div
-      className=" bg-center flex items-center justify-center"
+      className=""
     
     >
-      <img src={image} alt="" />
+      <img src={BannerDesktop} alt="" />
     </div>
     </div>
   );

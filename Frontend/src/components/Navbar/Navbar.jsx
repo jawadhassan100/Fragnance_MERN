@@ -9,7 +9,7 @@ const Navbar = () => {
   const cartCount = 0; 
 
   return (
-    <nav className="bg-black text-yellow-500  shadow-lg py-6  w-full z-50">
+    <nav className="bg-black text-[#FFD700]  shadow-lg py-6  w-full z-50">
       <div className="container mx-auto px-4 relative flex items-center py-3">
         {/* Left: Menu Items */}
         <div className="hidden lg:flex space-x-4 text-[14px] flex-1">

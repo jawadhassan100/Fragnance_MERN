@@ -35,7 +35,7 @@ const Footer = () => {
 
       {/* Bottom Section: Copyright & Social Icons */}
       <div className="mt-6 border-t mx-8 border-cream pt-6 flex flex-col md:flex-row items-center justify-between px-4">
-        <p className="text-sm">&copy; {new Date().getFullYear()} MyBrand. All Rights Reserved.</p>
+        <p className="text-sm">&copy; {new Date().getFullYear()} LaScentio. All Rights Reserved.</p>
         <div className="flex  space-x-4 mt-2 md:mt-0">
           <a href="#" target="_blank" className="text-xl "><FaFacebookF /></a>
           <a href="#" className="text-xl "><FaInstagram /></a>
