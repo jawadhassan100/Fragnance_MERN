@@ -3,16 +3,18 @@ import FAQ from "./components/FAQ/FAQ"
 import Footer from "./components/Footer/Footer"
 import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs"
 import { FaArrowUp, FaWhatsapp } from "react-icons/fa"
-import ProductSlider from "./components/ProductSlider/ProductSlider"
 import ProductCategory from "./components/ProductCategory/ProductCategory"
 import Features from "./components/Features/Features"
 import Hero from "./components/Hero/Hero"
-import Header from "./components/Header/Header"
 import ShopNow from "./components/ShopNow/ShopNow"
 import OurBestSeller from "./components/OurBestSeller/OurBestSeller"
 import NewArrivals from "./components/NewArrivals/NewArrivals"
 import Newsletter from "./components/NewsLetter/NewsLetter"
 import Reviews from "./components/Reviews/Reviews"
+import AboutPreview from "./components/AboutPreview/AboutPreview"
+import FakeNotifications from "./components/FakeNotification/FakeNotification"
+import PerfumeImpressions from "./components/PerfumeImpression/PerfumeImpression"
+
 
 const HomePage = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
@@ -54,13 +56,16 @@ const HomePage = () => {
     <ShopNow/>
     <OurBestSeller/>
     <NewArrivals/>
-    <ProductSlider/>
+    <PerfumeImpressions/>
+    {/* <ProductSlider/> */}
     <WhyChooseUs/>
+    <AboutPreview/>
     <Features/>
     <Reviews/>
     <FAQ/>
     <Newsletter/>
     <Footer/>
+    <FakeNotifications/>
     {showScrollButton && (
         <button
           onClick={handleClick}

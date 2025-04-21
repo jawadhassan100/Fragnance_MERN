@@ -6,6 +6,12 @@ const productSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
+  subtitle: {
+    type: String,
+    required: true,
+    trim: true
+  },
+   
   brand: {
     type: String,
     required: true

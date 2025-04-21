@@ -1,4 +1,3 @@
-import image from '../../assets/bgHero.jpg';
 import BannerDesktop from '../../assets/BannerDesktop.jpg';
 
 const Hero = () => {
@@ -9,7 +8,7 @@ const Hero = () => {
       className=""
     
     >
-      <img src={BannerDesktop} alt="" />
+      <img src={BannerDesktop} alt="" className='w-full'/>
     </div>
     </div>
   );

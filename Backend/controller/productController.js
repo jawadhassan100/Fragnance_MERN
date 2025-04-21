@@ -4,7 +4,7 @@ const uploadToCloudinary = require('../helper/cloudinaryHelper');
 // Add Product
 exports.addProduct = async (req, res) => {
   try {
-    const { name, brand, description, weight, price, salePrice, size, categories, Longevity, Sillage, stock } = req.body;
+    const { name, brand, description, weight, price,subtitle, salePrice, size, categories, Longevity, Sillage, stock } = req.body;
 
     if (!req.files || req.files.length > 5) {
       return res.status(400).json({ error: 'Maximum 5 images are allowed.' });
@@ -21,6 +21,7 @@ exports.addProduct = async (req, res) => {
     const product = new Product({
       name,
       brand,
+      subtitle,
       description,
       weight,
       price,
