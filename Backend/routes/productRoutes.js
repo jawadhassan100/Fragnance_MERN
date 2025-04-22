@@ -5,7 +5,7 @@ const upload = require("../config/multer");
 const { auth, adminAuth } = require("../middleware/authMiddleware");
 
 
-router.post('/add',auth,adminAuth, upload.array('images', 5), productController.addProduct);
+router.post('/add', upload.array('images', 5), productController.addProduct);
 router.get('/all', productController.getAllProducts);
 router.get('/:id', productController.getProductById);
 router.put('/edit/:id',auth,adminAuth, upload.array('images', 5), productController.editProduct);

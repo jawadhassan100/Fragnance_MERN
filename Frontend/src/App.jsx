@@ -6,7 +6,9 @@ import AboutUs from './components/AboutUs/AboutUs'
 import Register from './pages/Register.jsx/Register';
 import Login from './pages/Login/Login';
 import { AuthProvider } from './pages/AuthContext';
-import SingleProduct from './components/SingleProduct/SingleProduct';
+import SingleProduct from './pages/SingleProduct/SingleProduct';
+import CreateYourOwn from './pages/CreateYourOwn/CreateYourOwn';
+import AddProduct from './pages/AddProduct/AddProduct';
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/single-product' element={<SingleProduct/>}/>
+        <Route path='/create' element={<CreateYourOwn/>}/>
+        <Route path='/add-product' element={<AddProduct/>}/>
       </Routes>
     </AuthProvider>
     </>
