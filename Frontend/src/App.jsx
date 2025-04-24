@@ -9,6 +9,8 @@ import { AuthProvider } from './pages/AuthContext';
 import SingleProduct from './pages/SingleProduct/SingleProduct';
 import CreateYourOwn from './pages/CreateYourOwn/CreateYourOwn';
 import AddProduct from './pages/AddProduct/AddProduct';
+import BundleDetail from './pages/BundleDetail/BundleDetail';
+import Bundle from './pages/Bundle/Bundle';
 
 const App = () => {
   return (
@@ -24,6 +26,8 @@ const App = () => {
         <Route path='/single-product' element={<SingleProduct/>}/>
         <Route path='/create' element={<CreateYourOwn/>}/>
         <Route path='/add-product' element={<AddProduct/>}/>
+        <Route path='/bundle-detail' element={<BundleDetail/>}/>
+        <Route path='/bundle' element={<Bundle/>}/>
       </Routes>
     </AuthProvider>
     </>

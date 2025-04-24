@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="bg-black text-[#FFD700]  shadow-lg py-6  w-full z-50">
       <div className="container mx-auto px-4 relative flex items-center py-3">
         {/* Left: Menu Items */}
-        <div className="hidden lg:flex space-x-4 text-[14px] flex-1">
+        <div className="hidden  lg:flex space-x-4 text-[14px] flex-1">
           <Link
             to="/"
             className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-500  after:left-0 after:-bottom-1"
@@ -30,6 +30,12 @@ const Navbar = () => {
             className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-500  after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
           >
             Create
+          </Link>
+          <Link
+            to="/bundle"
+            className=" uppercase font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-500  after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+          >
+            Bundle
           </Link>
           <Link
             to="/about-us"
@@ -54,7 +60,7 @@ const Navbar = () => {
         </button>
 
         {/* Center: Logo (absolute positioning for true center) */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 text-xl font-bold">
+        <div className="absolute left-[50%] transform -translate-x-1/2 text-xl font-bold">
           <Link to="/" className="">
           LaScentio
           </Link>
