@@ -4,13 +4,19 @@ const mongoose = require('mongoose');
 const bundleSchema = new mongoose.Schema({
     title: String,
     mainImage: String,
-    options: [ {
-        name: String,
-        perfumes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Perfume' }],
-        }
-  ],
+    options: [
+      {
+        label: String,
+        perfumes: [
+          {
+            name: String,
+            price: Number,
+          },
+        ],
+      },
+    ],
   size: {
-    type: Number,  
+    type: String,  
     required: true,
     enum: ["50ml" ,"100ml", "200ml"], 
   },

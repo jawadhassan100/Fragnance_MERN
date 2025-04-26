@@ -3,7 +3,7 @@ const router = express.Router();
 const customPerfumeController = require('../controller/customPerfumeController');
 const { auth, adminAuth } = require("../middleware/authMiddleware");
 
-router.post('/add',auth, adminAuth, customPerfumeController.createCustomPerfume);
+router.post('/', customPerfumeController.createCustomPerfume);
 router.get('/all', customPerfumeController.getAllCustomPerfumes);
 router.get('/:id', customPerfumeController.getCustomPerfumeById); 
 router.put('/edit/:id',auth, adminAuth, customPerfumeController.editCustomPerfume);

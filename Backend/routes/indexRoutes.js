@@ -12,7 +12,7 @@ const newsLetterRoutes = require('./newsLetterRoutes')
 const bundleCartRoutes = require('./bundleCartRoutes')
 const bundleOrderRoutes = require('./bundleOrder')
 const customCartRoutes = require('./customCartRoutes')  
-const bundleOrder = require('./bundleOrder')
+const bundleRoutes = require('./bundleRoutes')
 
 
 router.use('/api', userRoutes);
@@ -27,7 +27,7 @@ router.use('/newsletter', newsLetterRoutes);
 router.use('/bundleCart', bundleCartRoutes);
 router.use('/bundleOrder', bundleOrderRoutes);
 router.use('/customCart', customCartRoutes);
-router.use('/bundleOrder', bundleOrder);
+router.use('/bundle', bundleRoutes);
 
 
 module.exports = router;

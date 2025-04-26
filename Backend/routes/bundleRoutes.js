@@ -1,20 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const bundleController = require('../controller/BundleController');
+const upload = require("../config/multer");
 
-// Create bundle
-router.post('/bundle', bundleController.createBundle);
+// Create bundle (with image)
+router.post('/', upload.single('mainImage'), bundleController.createBundle);
 
 // Get all bundles
-router.get('/bundle', bundleController.getAllBundles);
+router.get('/', bundleController.getAllBundles);
 
 // Get one bundle
-router.get('/bundle/:id', bundleController.getBundleById);
+router.get('/:id', bundleController.getBundleById);
 
-// Update bundle
-router.put('/bundle/:id', bundleController.updateBundle);
+// Update bundle (with optional image update)
+router.put('/:id', upload.single('mainImage'), bundleController.updateBundle);
 
 // Delete bundle
-router.delete('/bundle/:id', bundleController.deleteBundle);
+router.delete('/:id', bundleController.deleteBundle);
 
 module.exports = router;

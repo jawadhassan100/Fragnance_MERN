@@ -11,6 +11,8 @@ import CreateYourOwn from './pages/CreateYourOwn/CreateYourOwn';
 import AddProduct from './pages/AddProduct/AddProduct';
 import BundleDetail from './pages/BundleDetail/BundleDetail';
 import Bundle from './pages/Bundle/Bundle';
+import AddCustomPerfume from './pages/AddCustomPerfume/AddCustomPerfume';
+import AddBundle from './pages/AddBundle/AddBundle';
 
 const App = () => {
   return (
@@ -28,6 +30,8 @@ const App = () => {
         <Route path='/add-product' element={<AddProduct/>}/>
         <Route path='/bundle-detail' element={<BundleDetail/>}/>
         <Route path='/bundle' element={<Bundle/>}/>
+        <Route path='/create-custom' element={<AddCustomPerfume/>}/>
+        <Route path='/create-bundle' element={<AddBundle/>}/>
       </Routes>
     </AuthProvider>
     </>
