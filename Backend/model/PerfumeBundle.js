@@ -15,11 +15,11 @@ const bundleSchema = new mongoose.Schema({
         ],
       },
     ],
-  size: {
-    type: String,  
-    required: true,
-    enum: ["50ml" ,"100ml", "200ml"], 
-  },
+    availableSizes: {
+      type: [String],
+      enum: ["50ml", "100ml", "200ml"],
+      default: ["50ml", "100ml", "200ml"]
+    },
     totalPrice: Number,
     priceSaved: Number,
     percentageSaved: Number,

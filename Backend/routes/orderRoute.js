@@ -3,14 +3,32 @@ const router = express.Router();
 const orderController = require('../controller/orderController'); 
 const { auth, adminAuth } = require('../middleware/authMiddleware');
 
-router.post('/create-order', orderController.createOrder);
+// Create a new order
+router.post('/create', orderController.createOrder);
 
-router.get('/all-orders', auth, adminAuth , orderController.getAllOrders);
+// Get all orders (admin)
+router.get('/all', orderController.getAllOrders);
 
-router.get('/orders-by-email', orderController.getOrdersByEmail);
+// Get order by ID
+router.get('/:id', orderController.getOrderById);
 
-router.put('/update-order-status/:orderId', auth, adminAuth ,orderController.updateOrderStatus);
+// Get orders by customer email
+router.get('/customer/:email', orderController.getOrdersByCustomer);
 
-router.delete('/delete-order/:orderId',auth, adminAuth , orderController.deleteOrder);
+// Update order status
+router.patch('/:id/status', orderController.updateOrderStatus);
+
+// Update payment status
+router.patch('/:id/payment', orderController.updatePaymentStatus);
+
+// Cancel order
+router.patch('/:id/cancel', orderController.cancelOrder);
+
+// Get order stats for admin dashboard
+router.get('/stats/admin', orderController.getOrderStats);
+
+// Apply discount to order
+router.patch('/:id/discount', orderController.applyDiscount);
+
 
 module.exports = router;

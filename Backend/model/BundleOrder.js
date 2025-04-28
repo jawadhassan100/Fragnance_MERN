@@ -3,7 +3,16 @@ const mongoose = require('mongoose');
 
 const orderSchema = new mongoose.Schema({
   bundle: { type: mongoose.Schema.Types.ObjectId, ref: 'PerfumeBundle' },
-  selectedPerfumes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }],
+  selectedPerfumes: [ {
+    name: {
+      type: String,
+      required: true
+    },
+    price: {
+      type: Number,
+      required: true
+    }
+  }],
   quantity: Number,
   price: Number,
   customer: {

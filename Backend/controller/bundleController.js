@@ -5,7 +5,7 @@ const uploadToCloudinary = require('../helper/cloudinaryHelper');
 // CREATE
 exports.createBundle = async (req, res) => {
   try {
-    const { title, options, size } = req.body;
+    const { title, options, availableSizes  } = req.body;
 
     // Validate that options is an array
     if (!Array.isArray(options)) {
@@ -36,7 +36,7 @@ exports.createBundle = async (req, res) => {
       title,
       mainImage: mainImageUrl,
       options,
-      size,
+      availableSizes: availableSizes || ["50ml", "100ml", "200ml"],
       totalPrice,
       priceSaved,
       percentageSaved,
@@ -77,7 +77,7 @@ exports.getBundleById = async (req, res) => {
 // UPDATE
 exports.updateBundle = async (req, res) => {
   try {
-    const { title, options, size } = req.body;
+    const { title, options, availableSizes  } = req.body;
     let mainImageUrl = req.body.mainImage; // fallback to existing one
 
     // Upload new image if provided
@@ -101,7 +101,7 @@ exports.updateBundle = async (req, res) => {
         title,
         mainImage:mainImageUrl,
         options,
-        size,
+        availableSizes: availableSizes || ["50ml", "100ml", "200ml"],
         totalPrice,
         priceSaved,
         percentageSaved,

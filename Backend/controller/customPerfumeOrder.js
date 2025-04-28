@@ -3,6 +3,7 @@ const CustomPerfume = require('../model/CustomPerfume');
 const sendEmail = require('../utils/sendMails'); 
 const customOrderConfirmation = require('../utils/templates/customOrderConfirmation');
 
+
 exports.createCustomPerfumeOrder = async (req, res) => {
   try {
     const { fullName, email, shippingInfo, paymentMethod, selectedPerfumes, perfumeDetails } = req.body;
@@ -36,7 +37,7 @@ exports.createCustomPerfumeOrder = async (req, res) => {
     await customPerfumeOrder.save();
 
     const perfumeNames = selectedPerfumes.map((perfume) => perfume.perfumeName).join(' - ');
-    const customerHtmlContent = orderConfirmation(fullName, selectedPerfumes, perfumeDetails, totalPrice, shippingInfo, paymentMethod , perfumeNames);
+    const customerHtmlContent = customOrderConfirmation(fullName, selectedPerfumes, perfumeDetails, totalPrice, shippingInfo, paymentMethod , perfumeNames);
 
   // Send confirmation email to the customer
   sendEmail(email, 'Order Confirmation', customerHtmlContent);

@@ -1,36 +1,65 @@
 const Cart = require("../model/Cart");
+const { v4: uuidv4 } = require('uuid');
+const Product = require('../model/Product');
+const CustomPerfume = require('../model/CustomPerfume');
 
 // Add item to Cart
 exports.addToCart = async (req, res) => {
   try {
-    const { sessionId, productId, quantity } = req.body;
+    let { sessionId, items } = req.body;
+
+    // If no sessionId, generate one
+    if (!sessionId) {
+      sessionId = uuidv4(); 
+    }
 
     let cart = await Cart.findOne({ sessionId });
 
-    if (cart) {
-      const productIndex = cart.items.findIndex(
-        (item) => item.product.toString() === productId
-      );
-
-      if (productIndex >= 0) {
-        cart.items[productIndex].quantity += quantity;
-      } else {
-        cart.items.push({ product: productId, quantity });
-      }
-
-      cart.lastModified = new Date();
-      await cart.save();
-    } else {
-      cart = new Cart({
-        sessionId,
-        items: [{ product: productId, quantity }],
-      });
-
-      await cart.save();
+    if (!cart) {
+      cart = new Cart({ sessionId, items: [], customItems: [] });
     }
 
-    res.status(200).json({ message: "Product added to cart", cart });
+    // Loop through items and add to cart
+    for (const item of items) {
+      if (item.type === "Product") {
+        const product = await Product.findById(item.productId);
+        if (!product) {
+          return res.status(404).json({ error: 'Product not found' });
+        }
+
+        const existingProductIndex = cart.items.findIndex(
+          (p) => p.product.toString() === item.productId
+        );
+
+        if (existingProductIndex > -1) {
+          cart.items[existingProductIndex].quantity += item.quantity;
+        } else {
+          cart.items.push({
+            product: item.productId,
+            quantity: item.quantity
+          });
+        }
+
+      } else if (item.type === "CustomPerfume") {
+        const customPerfume = await CustomPerfume.findById(item.productId);
+        if (!customPerfume) {
+          return res.status(404).json({ error: 'Custom perfume not found' });
+        }
+
+        cart.customItems.push({
+          perfumeId: item.productId,
+          quantity: item.quantity,
+          size: customPerfume.size // or from frontend if customizable
+        });
+      }
+    }
+
+    cart.lastModified = new Date();
+    await cart.save();
+
+    res.status(200).json({ message: "Items added to cart", cart, sessionId });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: error.message });
   }
 };
